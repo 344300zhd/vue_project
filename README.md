@@ -26,5 +26,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## make some changes
 
 <<<<<<< HEAD
-## make some dev changes master and dev change
+## make some dev changes master and dev change 0232
 
