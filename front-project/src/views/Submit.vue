@@ -11,9 +11,10 @@
     <div class="column" >
       <el-button type="warning" @click="throttleSubmit">接口测试(节流)</el-button>
     </div>   
-    <div>现在时间:{{ nowDate }}</div>
-    <div> 格式化:{{ nowDay }} </div>
-    <div class="other">占位区域:{{testObj.name}}</div>
+    <el-col :span="4">
+      <el-input v-model="msg" @input="checkInput"></el-input>
+      <div class="btn" :class="{isRed:red}">提交</div>
+    </el-col>
   </div>
 </template>
 
@@ -36,13 +37,19 @@ export default {
       fileList:[],
       nowDay:"",
       nowDate:new Date(),
-      testObj:{}
+      testObj:{},
+      msg:"",
+      red:false
     }
   },
   mounted(){
     this.nowDay = dayjs().format("YYYY-MM-DD HH:mm")
   },
   methods: {
+    checkInput(val){
+      if(val) this.red = true
+      else this.red = false
+    },
     /** 获取文件列表 **/
     getFileList(data){
       this.fileList = data.fileList
@@ -92,6 +99,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.isRed{
+  background: red !important;
+}
 .container{
   overflow: hidden;
   .column{
@@ -99,6 +109,14 @@ export default {
   }
   .other{
     height: 500px;
+  }
+  .btn{
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background: #eee;
   }
 }
 </style>
