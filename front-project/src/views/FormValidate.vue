@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="height:2000px">
         <el-row>
             <el-col :span="8">
                 <Form ref="form">
@@ -24,13 +24,7 @@ export default {
     components:{Form,FormItem},
     methods:{
         submit(){
-            this.$confirm({title:"命令式组件"})
-            .then(confirm => {
-                console.log("确定 =>",confirm);
-            })
-            .catch(err => {
-                console.log("取消 =>",err);
-            })
+            
         }
     }
 }

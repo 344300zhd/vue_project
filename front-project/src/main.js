@@ -23,9 +23,7 @@ Vue.use(ElementUI)
 Vue.use(draggable)
 
 Vue.config.productionTip = false
-// 引入命令式组件
-import Confirm from "@/components/Confirm/index.js"
-Vue.prototype.$confirm  = Confirm
+
 
 // Title组件render渲染函数实现
 Vue.component('RenderTitle',{

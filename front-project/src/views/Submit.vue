@@ -13,7 +13,7 @@
     </div>   
     <div>现在时间:{{ nowDate }}</div>
     <div> 格式化:{{ nowDay }} </div>
-    <div class="other">占位区域</div>
+    <div class="other">占位区域:{{testObj.name}}</div>
   </div>
 </template>
 
@@ -35,7 +35,8 @@ export default {
       userList:[{username:"暂无信息"}],
       fileList:[],
       nowDay:"",
-      nowDate:new Date()
+      nowDate:new Date(),
+      testObj:{}
     }
   },
   mounted(){
